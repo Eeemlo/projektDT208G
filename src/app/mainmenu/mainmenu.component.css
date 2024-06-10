@@ -1,0 +1,49 @@
+div {
+    background-color: #2e2877be;
+    min-height: 4.5em;
+    border-bottom: 4px solid #2e2776;
+}
+
+img {
+    max-width: 120px;
+    position: absolute;
+    background-color: #2e2776;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 10px 10px 5px 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+}
+
+li {
+    margin: 1.2em 0;
+}
+
+a {
+    padding: 1.6em 2em;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    letter-spacing: 1.1px;
+    transition: ease 0.6s;
+}
+
+a:hover {
+    background-color: #2e2776;
+}
+
+@media screen and (max-width: 550px) {
+    img {
+        max-width: 80px;
+        margin-top: 30px;
+
+    }
+}

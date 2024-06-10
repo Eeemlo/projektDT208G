@@ -12,3 +12,8 @@ export const routes: Routes = [
     { path: 'myschedule', component: MyscheduleComponent}
 ];
 
+Huvudmenyns element skapades i en egen komponent som döptes till mainmenu och sedan importerades i app.component.html-filen då tanken är att den ska vara global för hela webbsidan. För att huvudmenyns länkar ska
+fungera med routingen som skapats i app.routes-filen används a taggarna med RouterLink istället för href. RouterLink importerades i huvudmenyns ts-fil för att detta skulle fungera.
+
+I övrigt ligger ingenting i den filen förutom 
+<router-outlet /> som dynamiskt hämtar den data som ska visas på sidan beroende på vad användaren klickat på.??
