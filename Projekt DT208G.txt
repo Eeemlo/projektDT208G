@@ -1,0 +1,14 @@
+Projekt DT208G
+
+Ett nytt projekt initierades genom öppna kommandotolken och ange ng new namnPåProjekt.
+CSS valdes som inställning för stylesheet och på frågan om server side rendering (SSR) skulle användas svarades ja, då det är ett universitet som webbplatsen skapas för och undersidorna behöver lätt kunna indexeras och vara sökbara. 
+
+En utvecklingserver startades upp med kommandot ng serve. 
+
+Inledningsvis skapades tre komponenter, en för respektive "sida", dvs hem, kurser och ramschema. Komponenterna importerades till app.routes.ts och routing för respektive komponent fastställdes därefter med hjälp av koden: 
+export const routes: Routes = [
+    { path: '', component: HomeComponent },
+    { path: 'courses', component: CoursesComponent },
+    { path: 'myschedule', component: MyscheduleComponent}
+];
+
