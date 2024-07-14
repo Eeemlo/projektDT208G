@@ -1,3 +1,8 @@
+div {
+    width: 100vw;
+    padding: 0 50px;
+}
+
 h1 {
     text-align: center;
     margin: 60px 0 0 0;
@@ -12,4 +17,11 @@ h1 {
     -webkit-hyphens:auto;
 -moz-hyphens:auto;
 margin: 40px auto 60px;
+}
+
+@media screen and (max-width: 900px){
+
+    .columnText {
+        column-count: 1;
+    }
 }

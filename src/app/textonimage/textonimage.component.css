@@ -1,0 +1,23 @@
+.bgImage {
+    min-height: 600px;
+    background-image: url("/assets/student.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.textBox {
+    background-color: #2e2877be;
+    max-width: 550px;
+    width: 100%;
+    margin: -110px 50px 80px 50px;
+    padding: 50px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+p {
+    color: #fff;
+}
