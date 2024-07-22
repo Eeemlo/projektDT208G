@@ -43,6 +43,10 @@ a:hover {
     background-color: #2e2776;
 }
 
+.active {
+    background-color: #2e2776;
+}
+
 @media screen and (max-width: 550px) {
     img {
         max-width: 80px;
