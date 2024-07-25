@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class CourseDataService {
 
   private url : string = "https://matdah.github.io/DT208G---Programmering-i-TypeScript/Moment%205%20-%20Projekt/miun_courses.json"
+  private storageKey = 'mySchedule';
 
   constructor(private http : HttpClient) { }
 
@@ -16,4 +17,5 @@ export class CourseDataService {
   getCourses() : Observable<Course[]> {
     return this.http.get<Course[]>(this.url);
   }
+
 }
