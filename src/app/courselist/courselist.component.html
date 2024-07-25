@@ -54,7 +54,7 @@
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef> Lägg till </th>
       <td mat-cell *matCellDef="let element">
-        <button>Lägg till</button>
+        <button (click)="addCourse(element)">Lägg till</button>
       </td>
     </ng-container>
   

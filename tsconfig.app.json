@@ -8,11 +8,12 @@
     ]
   },
   "files": [
-    "src/main.ts",
-    "src/main.server.ts",
-    "server.ts"
+    "src/main.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/app/app.config.server.ts" // Exkludera filer som inte används
   ]
 }
