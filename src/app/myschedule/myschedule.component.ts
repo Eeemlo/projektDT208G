@@ -1,32 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { MatTableModule, MatTableDataSource } from '@angular/material/table';
-import { MyScheduleService } from '../services/my-schedule.service';
-import { Course } from '../models/course';
+import { Component } from '@angular/core';
+import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { MyschedulelistComponent } from '../myschedulelist/myschedulelist.component';
 
 @Component({
   selector: 'app-myschedule',
   standalone: true,
-  imports: [MatTableModule, MatSortModule],
+  imports: [MatTableModule, MatSortModule, MyschedulelistComponent],
   templateUrl: './myschedule.component.html',
   styleUrl: './myschedule.component.css'
 })
 export class MyscheduleComponent {
-displayedColumns: string[] = ['courseCode', 'courseName', 'subject', 'points', 'syllabus', 'action']; 
-dataSource: MatTableDataSource<Course> = new MatTableDataSource<Course>();
-
-constructor(private myScheduleService: MyScheduleService) {}
-
-ngOnInit() {
-  this.loadCourses();
-}
-
-loadCourses() {
-  this.dataSource.data = this.myScheduleService.getStoredCourses();
-}
-
-removeCourse(courseCode: string): void {
-  this.myScheduleService.removeCourse(courseCode);
-  this.loadCourses();
-}
 }

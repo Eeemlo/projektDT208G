@@ -1,0 +1,35 @@
+#tableContainer {
+    max-width: 1370px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+mat-paginator {
+    margin-top: 20px;
+}
+
+#filter {
+    width: 50%;
+}
+
+#subject {
+    width: 50%;
+}
+
+.mat-elevation-z8 {
+    box-shadow: none !important;
+}
+
+button {
+    background-color: #2e2776;
+    padding: 0.5em 1em;
+    color: #fff;
+    border: none;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #8f87e3;
+    cursor: pointer;
+}
