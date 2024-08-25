@@ -30,6 +30,11 @@ removeCourse(courseCode: string): void {
   this.myScheduleService.removeCourse(courseCode);
   this.loadCourses();
 }
+
+  // Metod för att räkna totalpoängen
+  getTotalPoints(): number {
+    return this.dataSource.data.reduce((acc, course) => acc + course.points, 0);
+  }
 }
 
 

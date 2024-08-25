@@ -26,7 +26,7 @@ ul {
     display: flex;
 }
 
-li {
+.largeMenu li {
     margin: 1.2em 0;
 }
 
@@ -45,6 +45,111 @@ a:hover {
 
 .active {
     background-color: #2e2776;
+}
+
+.logoLink {
+    padding:0em 0em;
+}
+
+.hamburgerMenu {
+    display: none;
+}
+
+@media screen and (max-width: 680px) {
+.largeMenu {
+    display: none;
+}
+
+.hamburgerMenu {
+    display: block;
+}
+
+label .menu {
+    position: absolute;
+    right: -100px;
+    top: -100px;
+    z-index: 100;
+    width: 200px;
+    height: 200px;
+    background: #2e2776be;
+    border-radius: 50% 50% 50% 50%;
+
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    
+  }
+  
+  label .hamburger {
+    position: absolute;
+    top: 135px;
+    left: 50px;
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    display: block;
+    transform-origin: center;
+    transition: .5s ease-in-out;
+  }
+  
+  label .hamburger:after, label .hamburger:before {
+    transition: .5s ease-in-out;
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+  }
+  
+  label .hamburger:before { top: -10px; }
+  
+  label .hamburger:after { bottom: -10px; }
+  
+  label input { display: none; }
+  
+  label input:checked + .menu {
+    box-shadow: 0 0 0 100vw #2e2776be, 0 0 0 100vh #2e2776be;
+    border-radius: 0;
+    
+  }
+  
+  label input:checked + .menu .hamburger {
+    transform: rotate(45deg);
+    
+  }
+  
+  label input:checked + .menu .hamburger:after {
+    transform: rotate(90deg);
+    bottom: 0;
+    
+  }
+  
+  label input:checked + .menu .hamburger:before {
+    transform: rotate(90deg);
+    top: 0;
+    
+  }
+  
+  label input:checked + .menu + ul { opacity: 1; }
+  
+  label ul {
+    z-index: 200;
+    position: absolute;
+    top: 400%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: .25s 0s ease-in-out;
+    flex-direction: column;
+  }
+  
+  label a {
+    margin-bottom: 1em;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+  }
+  
 }
 
 @media screen and (max-width: 550px) {

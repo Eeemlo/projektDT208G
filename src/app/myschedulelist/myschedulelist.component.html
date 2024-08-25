@@ -1,51 +1,57 @@
-
 <div id="tableContainer">
 
-    <div id="table">
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <div id="table">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
-  <!-- Kurskod kolumn -->
-  <ng-container matColumnDef="courseCode">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Kurskod </th>
-    <td mat-cell *matCellDef="let element"> {{element.courseCode}} </td>
-  </ng-container>
+      <!-- Kurskod kolumn -->
+      <ng-container matColumnDef="courseCode">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Kurskod </th>
+        <td mat-cell *matCellDef="let element"> {{element.courseCode}} </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+      </ng-container>
 
-  <!-- Kursnamn kolumn -->
-  <ng-container matColumnDef="courseName">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Kursnamn </th>
-    <td mat-cell *matCellDef="let element"> {{element.courseName}} </td>
-  </ng-container>
+      <!-- Kursnamn kolumn -->
+      <ng-container matColumnDef="courseName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Kursnamn </th>
+        <td mat-cell *matCellDef="let element"> {{element.courseName}} </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+      </ng-container>
 
-  <!-- Ämne kolumn -->
-  <ng-container matColumnDef="subject">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header> Ämne </th>
-    <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
-  </ng-container>
+      <!-- Ämne kolumn -->
+      <ng-container matColumnDef="subject">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ämne </th>
+        <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+        <td mat-footer-cell *matFooterCellDef>Totalt: </td>
+      </ng-container>
 
-  <!-- Poäng kolumn -->
-  <ng-container matColumnDef="points">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header > Poäng </th>
-    <td mat-cell *matCellDef="let element"> {{element.points}} </td>
-  </ng-container>
+      <!-- Poäng kolumn -->
+      <ng-container matColumnDef="points">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Poäng </th>
+        <td mat-cell *matCellDef="let element"> {{element.points}} </td>
+        <td mat-footer-cell *matFooterCellDef>{{getTotalPoints()}} hp</td>
+      </ng-container>
 
-  <!-- Kursplan kolumn -->
-  <ng-container matColumnDef="syllabus">
-    <th mat-header-cell *matHeaderCellDef> Kursplan </th>
-    <td mat-cell *matCellDef="let element">
-      <a [href]="element.syllabus" target="_blank">Kursplan</a>
-    </td>
-  </ng-container>
+      <!-- Kursplan kolumn -->
+      <ng-container matColumnDef="syllabus">
+        <th mat-header-cell *matHeaderCellDef> Kursplan </th>
+        <td mat-cell *matCellDef="let element">
+          <a [href]="element.syllabus" target="_blank">Kursplan</a>
+        </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+      </ng-container>
 
-  <!-- Lägg till Column -->
-  <ng-container matColumnDef="action">
-    <th mat-header-cell *matHeaderCellDef> Ta bort</th>
-    <td mat-cell *matCellDef="let element">
-      <button (click)="removeCourse(element.courseCode)">Ta bort</button>
-    </td>
-  </ng-container>
+      <!-- Lägg till kolumn -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Ta bort</th>
+        <td mat-cell *matCellDef="let element">
+          <button (click)="removeCourse(element.courseCode)">Ta bort</button>
+        </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+      </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-</div>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+    </table>
+  </div>
 </div>

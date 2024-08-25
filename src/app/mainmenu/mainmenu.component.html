@@ -1,11 +1,21 @@
 
 <div>
-<img src="../assets/logo.png" alt="logo">
+<a class="logoLink" routerLink="/home" routerLinkActive="active"><img src="../assets/logo.png" alt="logo"></a>
 <nav>
-  <ul>
+  <ul class="largeMenu">
     <li><a routerLink="/home" routerLinkActive="active">Startsida</a></li>
     <li><a routerLink="/courses" routerLinkActive="active">Kurser</a></li>
     <li><a routerLink="/myschedule" routerLinkActive="active">Ramschema</a></li>
   </ul>
+
+  <label class="hamburgerMenu">
+    <input type="checkbox" id="menuToggle">
+    <span class="menu"> <span class="hamburger"></span> </span>
+    <ul class="smallMenu">
+      <li><a routerLink="/home" routerLinkActive="active">Startsida</a></li>
+      <li><a routerLink="/courses" routerLinkActive="active">Kurser</a></li>
+      <li><a routerLink="/myschedule" routerLinkActive="active">Ramschema</a></li>
+    </ul>
+    </label>
 </nav>
 </div>
