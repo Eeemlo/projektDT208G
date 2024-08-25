@@ -20,40 +20,40 @@
 
     <!-- Kurskod kolumn -->
     <ng-container matColumnDef="courseCode">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Kurskod </th>
-      <td mat-cell *matCellDef="let element"> {{element.courseCode}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="courseCode"> Kurskod </th>
+      <td mat-cell *matCellDef="let element" class="courseCode"> {{element.courseCode}} </td>
     </ng-container>
   
     <!-- Kursnamn kolumn -->
     <ng-container matColumnDef="courseName">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Kursnamn </th>
-      <td mat-cell *matCellDef="let element"> {{element.courseName}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="courseName"> Kursnamn </th>
+      <td mat-cell *matCellDef="let element" class="courseName"> {{element.courseName}} </td>
     </ng-container>
   
     <!-- Ämne kolumn -->
     <ng-container matColumnDef="subject">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Ämne </th>
-      <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="subject"> Ämne </th>
+      <td mat-cell *matCellDef="let element" class="subject"> {{element.subject}} </td>
     </ng-container>
   
     <!-- Poäng kolumn -->
     <ng-container matColumnDef="points">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header > Poäng </th>
-      <td mat-cell *matCellDef="let element"> {{element.points}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="points"> Poäng </th>
+      <td mat-cell *matCellDef="let element" class="points"> {{element.points}} </td>
     </ng-container>
   
     <!-- Kursplan kolumn -->
     <ng-container matColumnDef="syllabus">
-      <th mat-header-cell *matHeaderCellDef> Kursplan </th>
-      <td mat-cell *matCellDef="let element">
+      <th mat-header-cell *matHeaderCellDef class="syllabus"> Kursplan </th>
+      <td mat-cell *matCellDef="let element" class="syllabus">
         <a [href]="element.syllabus" target="_blank">Kursplan</a>
       </td>
     </ng-container>
   
     <!-- Lägg till Column -->
     <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef> Lägg till </th>
-      <td mat-cell *matCellDef="let element">
+      <th mat-header-cell *matHeaderCellDef class="action"> Lägg till </th>
+      <td mat-cell *matCellDef="let element" class="action">
         <button (click)="addCourse(element)">Lägg till</button>
       </td>
     </ng-container>

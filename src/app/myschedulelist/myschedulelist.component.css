@@ -33,3 +33,15 @@ button:hover {
     background-color: #8f87e3;
     cursor: pointer;
 }
+
+@media screen and (max-width: 1140px) {
+    .subject {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 812px) {
+    .courseCode {
+        display: none;
+    }
+}

@@ -5,36 +5,36 @@
 
       <!-- Kurskod kolumn -->
       <ng-container matColumnDef="courseCode">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Kurskod </th>
-        <td mat-cell *matCellDef="let element"> {{element.courseCode}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="courseCode"> Kurskod </th>
+        <td mat-cell *matCellDef="let element" class="courseCode"> {{element.courseCode}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
       <!-- Kursnamn kolumn -->
       <ng-container matColumnDef="courseName">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Kursnamn </th>
-        <td mat-cell *matCellDef="let element"> {{element.courseName}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header  class="courseName"> Kursnamn </th>
+        <td mat-cell *matCellDef="let element"  class="courseName"> {{element.courseName}} </td>
         <td mat-footer-cell *matFooterCellDef></td>
       </ng-container>
 
       <!-- Ämne kolumn -->
       <ng-container matColumnDef="subject">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ämne </th>
-        <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header  class="subject"> Ämne </th>
+        <td mat-cell *matCellDef="let element"  class="subject"> {{element.subject}} </td>
         <td mat-footer-cell *matFooterCellDef>Totalt: </td>
       </ng-container>
 
       <!-- Poäng kolumn -->
       <ng-container matColumnDef="points">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Poäng </th>
-        <td mat-cell *matCellDef="let element"> {{element.points}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header  class="points"> Poäng </th>
+        <td mat-cell *matCellDef="let element"  class="points"> {{element.points}} </td>
         <td mat-footer-cell *matFooterCellDef>{{getTotalPoints()}} hp</td>
       </ng-container>
 
       <!-- Kursplan kolumn -->
       <ng-container matColumnDef="syllabus">
-        <th mat-header-cell *matHeaderCellDef> Kursplan </th>
-        <td mat-cell *matCellDef="let element">
+        <th mat-header-cell *matHeaderCellDef  class="syllabus"> Kursplan </th>
+        <td mat-cell *matCellDef="let element"  class="syllabus">
           <a [href]="element.syllabus" target="_blank">Kursplan</a>
         </td>
         <td mat-footer-cell *matFooterCellDef></td>
@@ -42,8 +42,8 @@
 
       <!-- Lägg till kolumn -->
       <ng-container matColumnDef="action">
-        <th mat-header-cell *matHeaderCellDef> Ta bort</th>
-        <td mat-cell *matCellDef="let element">
+        <th mat-header-cell *matHeaderCellDef class="action"> Ta bort</th>
+        <td mat-cell *matCellDef="let element" class="action">
           <button (click)="removeCourse(element.courseCode)">Ta bort</button>
         </td>
         <td mat-footer-cell *matFooterCellDef></td>
