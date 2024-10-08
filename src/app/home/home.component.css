@@ -25,3 +25,9 @@ margin: 40px auto 60px;
         column-count: 1;
     }
 }
+
+@media screen and (max-width: 500px){
+div {
+    padding: 0px 20px;
+}
+}

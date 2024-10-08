@@ -1,8 +1,25 @@
 #tableContainer {
     max-width: 1370px;
     width: 100%;
-    margin-top: 10px;
-    margin-bottom: 50px;
+    margin: 10px auto 50px auto;
+}
+
+#table {
+    max-height: 600px;
+    overflow: auto; 
+    max-width: 1000px;
+    width: 90vw;
+}
+
+table {
+    width: 100%; 
+    max-width: 100%;
+    table-layout: auto; 
+    border-collapse: collapse; 
+}
+
+th, td {
+    word-wrap: break-word; /* Bryt ord för att förhindra att celler blir för breda */
 }
 
 mat-paginator {
@@ -40,8 +57,26 @@ button:hover {
     }
 }
 
+
 @media screen and (max-width: 812px) {
     .courseCode {
         display: none;
     }
+
+    th, td, button {
+        font-size: 90%;
+    }
+
+}
+
+@media screen and (max-width: 415px) {
+
+    th, td, button {
+        font-size: 9px;
+    }
+
+    th, td {
+        padding: 0;
+    }
+
 }

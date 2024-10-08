@@ -1,10 +1,13 @@
 
 footer {
+    position: relative;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     background-color: #8f87e3;
     padding: 40px 50px;
     color: #fff;
+    width: 100%;
 }
 
 div {
@@ -17,4 +20,10 @@ a {
 
 p {
     font-size: 0.8em;
+}
+
+@media screen and (max-width: 600px) {
+    footer {
+        flex-direction: column; 
+    }
 }
