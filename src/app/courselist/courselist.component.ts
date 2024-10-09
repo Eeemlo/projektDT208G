@@ -26,31 +26,39 @@ export class CourselistComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort | undefined;
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
 
-   // Data för mat-select
-   subjects: string[] = [];
-   selectedSubject: string | undefined;
- 
+  subjects: string[] = [];
+  selectedSubject: string = 'Alla ämnen'; // Default subject filter value
+  filterText: string = ''; // Default text filter value
 
-  // Konstruktor för att använda service för kursdata
   constructor(private courseDataService: CourseDataService,
-    private myScheduleService: MyScheduleService
-  ) {}
+              private myScheduleService: MyScheduleService) {}
 
-  // Prenumerera på data från webbtjänst
   ngOnInit() {
     this.courseDataService.getCourses().subscribe(courses => {
       this.dataSource.data = courses;
 
-
-      // Extrahera unika subject och lägg till "Alla ämnen"
+      // Extrahera unika ämnen och inkludera "Alla ämnen" som val
       const uniqueSubjects = new Set(courses.map(course => course.subject));
       this.subjects = ['Alla ämnen', ...uniqueSubjects];
+
+      // Anpassa filterPredicate för att hantera både fritext och ämne
+      this.dataSource.filterPredicate = (data: Course, filter: string) => {
+        const filterObject = JSON.parse(filter);
+        const matchesText = data.courseName.toLowerCase().includes(filterObject.text) || 
+                            data.courseCode.toLowerCase().includes(filterObject.text) || 
+                            data.subject.toLowerCase().includes(filterObject.text);
+        
+        const matchesSubject = filterObject.subject === 'Alla ämnen' || 
+                               data.subject === filterObject.subject;
+
+        return matchesText && matchesSubject;
+      };
     });
   }
 
   ngAfterViewInit() {
     if (this.sort) {
-    this.dataSource.sort = this.sort;
+      this.dataSource.sort = this.sort;
     }
 
     if (this.paginator) {
@@ -58,28 +66,26 @@ export class CourselistComponent implements OnInit, AfterViewInit {
     }
   }
 
+  // Uppdatera textfiltret när användaren skriver
   applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.filterText = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    this.applyCombinedFilter();
   }
 
+  // Uppdatera ämnesfiltret när användaren ändrar ämne
   onSelectChange(event: any) {
     this.selectedSubject = event.value;
-    console.log('Selected subject:', this.selectedSubject);
-    // Filtrera tabellen baserat på valt ämne
-    if (this.selectedSubject === 'Alla ämnen') {
-      this.dataSource.filter = '';
-    } else {
-      this.dataSource.filterPredicate = (data: Course, filter: string) => {
-        return data.subject.toLowerCase().includes(filter.toLowerCase());
-      };
-      this.dataSource.filter = this.selectedSubject ? this.selectedSubject.toLowerCase() : '';
-}
-}
+    this.applyCombinedFilter();
+  }
 
-addCourse(course: Course): void {
-  this.myScheduleService.addCourse(course);
-  alert(`Kursen ${course.courseName} har lagts till i ditt schema.`);
+  // Kombinera både text- och ämnesfiltret
+  applyCombinedFilter() {
+    const filterObject = { text: this.filterText, subject: this.selectedSubject };
+    this.dataSource.filter = JSON.stringify(filterObject);
+  }
+
+  addCourse(course: Course): void {
+    this.myScheduleService.addCourse(course);
+    alert(`Kursen ${course.courseName} har lagts till i ditt schema.`);
+  }
 }
-}
- 
