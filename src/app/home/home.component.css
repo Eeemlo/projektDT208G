@@ -15,20 +15,22 @@ h1 {
     max-width: 1050px;
     text-align: justify;
     hyphens: auto;
-    -webkit-hyphens:auto;
--moz-hyphens:auto;
-margin: 40px auto 60px;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    word-wrap: break-word;
+    margin: 40px auto 60px;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px) {
 
     .columnText {
         column-count: 1;
+        text-align:left;
     }
 }
 
-@media screen and (max-width: 500px){
-div {
-    padding: 0px 20px;
-}
+@media screen and (max-width: 500px) {
+    div {
+        padding: 0px 20px;
+    }
 }
