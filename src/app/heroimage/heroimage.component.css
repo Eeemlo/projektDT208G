@@ -30,3 +30,10 @@ button {
 button:hover {
     background-color: #2e2877be;
 }
+
+@media screen and (max-width: 850px) {
+    div {
+        min-height: 50vh;
+        max-height: 50vh;
+    }
+}

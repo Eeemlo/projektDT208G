@@ -22,7 +22,13 @@ p {
     color: #fff;
 }
 
+
 @media screen and (max-width: 660px) {
+
+    .bgImage {
+        min-height: 300px;
+        max-height: 300px;
+    }
 
     .textBox {
         margin: -110px 20px 80px 20px;

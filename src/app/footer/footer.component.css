@@ -1,29 +1,36 @@
 
 footer {
+    width: 100%;
+    background-color: #8f87e3;
+}
+
+.footerContainer {
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #8f87e3;
     padding: 40px 50px;
     color: #fff;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
 }
 
-div {
-    text-align: center;
-}
+
 
 a {
     color: #fff;
 }
 
 p {
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 @media screen and (max-width: 600px) {
-    footer {
+    .footerContainer {
         flex-direction: column; 
+    }
+
+    .footerContainer div {
+        margin: 2em 0;
     }
 }
