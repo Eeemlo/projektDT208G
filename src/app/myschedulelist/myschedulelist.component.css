@@ -1,19 +1,19 @@
 #tableContainer {
     max-width: 1370px;
     width: 100%;
-    margin: 10px auto 50px auto;
+    margin: 10px auto 50px;
 }
 
 #table {
     max-height: 600px;
-    overflow: auto; 
     max-width: 1000px;
-    width: 90vw;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 table {
+    position: relative;
     width: 100%; 
-    max-width: 100%;
     table-layout: auto; 
     border-collapse: collapse; 
 }
@@ -39,16 +39,20 @@ mat-paginator {
 }
 
 button {
-    background-color: #2e2776;
-    padding: 0.5em 1em;
+    background-color: #bb0909;
+    padding: 0.02em 0.5em;
     color: #fff;
     border: none;
     transition: 0.3s ease;
 }
 
 button:hover {
-    background-color: #8f87e3;
+    background-color: #850a0a;
     cursor: pointer;
+}
+
+#removeBtn {
+    font-size: 26px;
 }
 
 @media screen and (max-width: 1140px) {
@@ -75,8 +79,16 @@ button:hover {
         font-size: 9px;
     }
 
-    th, td {
-        padding: 0;
+    #removeBtn {
+        font-size: 18px;
+    }
+
+    .points {
+        max-width: 65px;
+    }
+
+    .action {
+        min-width: 70px;
     }
 
 }

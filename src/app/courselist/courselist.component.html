@@ -1,70 +1,67 @@
-
 <div id="tableContainer">
-    <mat-form-field id="filter">
-        <mat-label>Fritextsökning</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-      </mat-form-field>
-      
+  <mat-form-field id="filter">
+    <mat-label>Fritextsökning</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
 
-      <mat-form-field id="subject" appearance="fill">
-        <mat-label>Filtrera på ämne</mat-label>
-        <mat-select (selectionChange)="onSelectChange($event)">
-          <mat-option *ngFor="let subject of subjects" [value]="subject">
-            {{ subject }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
 
-      <div id="table">
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <mat-form-field id="subject" appearance="fill">
+    <mat-label>Filtrera på ämne</mat-label>
+    <mat-select (selectionChange)="onSelectChange($event)">
+      <mat-option *ngFor="let subject of subjects" [value]="subject">
+        {{ subject }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-    <!-- Kurskod kolumn -->
-    <ng-container matColumnDef="courseCode">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="courseCode"> Kurskod </th>
-      <td mat-cell *matCellDef="let element" class="courseCode"> {{element.courseCode}} </td>
-    </ng-container>
-  
-    <!-- Kursnamn kolumn -->
-    <ng-container matColumnDef="courseName">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="courseName"> Kursnamn </th>
-      <td mat-cell *matCellDef="let element" class="courseName"> {{element.courseName}} </td>
-    </ng-container>
-  
-    <!-- Ämne kolumn -->
-    <ng-container matColumnDef="subject">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="subject"> Ämne </th>
-      <td mat-cell *matCellDef="let element" class="subject"> {{element.subject}} </td>
-    </ng-container>
-  
-    <!-- Poäng kolumn -->
-    <ng-container matColumnDef="points">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header class="points"> Poäng </th>
-      <td mat-cell *matCellDef="let element" class="points"> {{element.points}} </td>
-    </ng-container>
-  
-    <!-- Kursplan kolumn -->
-    <ng-container matColumnDef="syllabus">
-      <th mat-header-cell *matHeaderCellDef class="syllabus"> Kursplan </th>
-      <td mat-cell *matCellDef="let element" class="syllabus">
-        <a [href]="element.syllabus" target="_blank">Kursplan</a>
-      </td>
-    </ng-container>
-  
-    <!-- Lägg till Column -->
-    <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef class="action"> Lägg till </th>
-      <td mat-cell *matCellDef="let element" class="action">
-        <button (click)="addCourse(element)">Lägg till</button>
-      </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-</div>
+  <div id="table">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
-  <mat-paginator [pageSizeOptions]="[10, 25, 50]"
-  showFirstLastButtons
-  aria-label="Select page of periodic elements">
-</mat-paginator>
+      <!-- Kurskod kolumn -->
+      <ng-container matColumnDef="courseCode">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="courseCode"> Kurskod </th>
+        <td mat-cell *matCellDef="let element" class="courseCode"> {{element.courseCode}} </td>
+      </ng-container>
+
+      <!-- Kursnamn kolumn -->
+      <ng-container matColumnDef="courseName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="courseName"> Kursnamn </th>
+        <td mat-cell *matCellDef="let element" class="courseName"> {{element.courseName}} </td>
+      </ng-container>
+
+      <!-- Ämne kolumn -->
+      <ng-container matColumnDef="subject">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="subject"> Ämne </th>
+        <td mat-cell *matCellDef="let element" class="subject"> {{element.subject}} </td>
+      </ng-container>
+
+      <!-- Poäng kolumn -->
+      <ng-container matColumnDef="points">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="points"> Poäng </th>
+        <td mat-cell *matCellDef="let element" class="points"> {{element.points}} </td>
+      </ng-container>
+
+      <!-- Kursplan kolumn -->
+      <ng-container matColumnDef="syllabus">
+        <th mat-header-cell *matHeaderCellDef class="syllabus"> Kursplan </th>
+        <td mat-cell *matCellDef="let element" class="syllabus">
+          <a [href]="element.syllabus" target="_blank">Kursplan</a>
+        </td>
+      </ng-container>
+
+      <!-- Lägg till Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef class="action"> Lägg till </th>
+        <td mat-cell *matCellDef="let element" class="action">
+          <button id="plusBtn" (click)="addCourse(element)">+</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <mat-paginator [pageSizeOptions]="[10, 25, 50]" showFirstLastButtons aria-label="Select page of periodic elements">
+  </mat-paginator>
 </div>

@@ -1,18 +1,18 @@
 #tableContainer {
     max-width: 1370px;
     width: 100%;
-    margin-top: 10px;
-    margin-bottom: 50px;
+    margin: 10px auto 50px;
 }
 
 #table {
     max-height: 600px;
     max-width: 1000px;
-    width: 90vw;
-    overflow: auto; 
+    width: 100vw;
+    overflow-x: hidden; 
 }
 
 table {
+    position: relative;
     width: 100%; 
     max-width: 100%; 
     table-layout: auto; 
@@ -41,7 +41,7 @@ mat-paginator {
 
 button {
     background-color: #2e2776;
-    padding: 0.5em 1em;
+    padding: 0.1em 0.5em;
     color: #fff;
     border: none;
     transition: 0.3s ease;
@@ -52,6 +52,9 @@ button:hover {
     cursor: pointer;
 }
 
+#plusBtn {
+    font-size: 26px;
+}
 
 @media screen and (max-width: 1140px) {
     .subject {
@@ -76,5 +79,14 @@ button:hover {
     th, td, button {
         font-size: 9px;
     }
+
+    #plusBtn {
+        font-size: 18px;
+    }
+
+    
+.points {
+    max-width: 50px;
+}
 
 }

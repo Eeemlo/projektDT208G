@@ -1,6 +1,10 @@
 
 main {
     min-height: 87vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #myScheduleComponent {

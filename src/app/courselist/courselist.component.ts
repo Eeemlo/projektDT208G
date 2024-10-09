@@ -82,3 +82,4 @@ addCourse(course: Course): void {
   alert(`Kursen ${course.courseName} har lagts till i ditt schema.`);
 }
 }
+ 
