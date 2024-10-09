@@ -1,6 +1,6 @@
 [build]
   publish = "dist/projekt-dt208-g"  
-  command = "ng build"    
+  command = "npm run build"    
 
 [[redirects]]
   from = "/*"
