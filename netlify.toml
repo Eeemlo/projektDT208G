@@ -1,0 +1,17 @@
+[[redirects]]
+from = "https://classy-belekoy-faa391.netlify.app/home"
+to = "https://classy-belekoy-faa391.netlify.app/"
+status = 200
+force = true
+
+[[redirects]]
+from = "https://classy-belekoy-faa391.netlify.app/courses"
+to = "https://classy-belekoy-faa391.netlify.app/"
+status = 200
+force = true
+
+[[redirects]]
+from = "https://classy-belekoy-faa391.netlify.app/myschedule"
+to = "https://classy-belekoy-faa391.netlify.app/"
+status = 200
+force = true
